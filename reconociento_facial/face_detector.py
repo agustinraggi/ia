@@ -6,7 +6,11 @@ smile_detector = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 eye_detector = cv2.CascadeClassifier('haarcascade_eye.xml')
 
+
 video = cv2.VideoCapture("28003-1631171950.webp") 
+
+video = cv2.VideoCapture(0) 
+
 
 while True:
 
@@ -25,6 +29,15 @@ while True:
 
     for (x, y, w, h) in faces:
         cv2.rectangle(Frame, (x, y), (x+w, y+h), (100,200,50), 2)
+
+
+    for (x, y, w, h) in eyes:
+        cv2.rectangle(Frame, (x, y), (x+w, y+h), (0,0,255), 2)
+
+    for (x, y, w, h) in smiles:
+        cv2.rectangle(Frame, (x,y), (x+w, y+h), (255,255,255), 2 )
+    cv2.imshow("Rosalia", Frame)
+
 
     for (x, y, w, h) in eyes:
         cv2.rectangle(Frame, (x, y), (x+w, y+h), (0,0,255), 2)
