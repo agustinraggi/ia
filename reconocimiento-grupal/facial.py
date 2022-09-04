@@ -1,4 +1,3 @@
-from itertools import count
 import cv2 
 import os
 
@@ -23,7 +22,7 @@ for imageName in os.listdir(imagesPath):
 
     for (x, y, w, h) in faces:
         
-        # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
         face = image[y:y + h, x:x + w]
 
@@ -33,12 +32,12 @@ for imageName in os.listdir(imagesPath):
 
         count += 1
 
-#         cv2.imshow("Image", image)
+        cv2.imshow("Image", image)
 
-#         cv2.waitKey(0)
+        cv2.waitKey(0)
 
-#     cv2.imshow("Image", image)
+    cv2.imshow("Image", image)
 
-#     cv2.waitKey(0)
+    cv2.waitKey(0)
 
-# cv2.destroyAllWindows()
+cv2.destroyAllWindows()
